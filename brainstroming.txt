@@ -1,0 +1,63 @@
+Features
+users can sign into the app with their email and password
+users can create recipes with ingredients and instructions
+recipes can be marked as public or private
+users can view other people’s recipes
+ingredients from recipes can be added to user’s grocery lists
+users can create their own occasions and assign recipes to occasions
+
+
+Brainstorming: hello world! 
+User
+    User_id 
+        int
+    Email
+        VARCHAR(50), to limit the num of characters being input
+    Username 
+        VARCHAR(20), to limit the num of characters being input
+    Password 
+        text, because hashing can make these quite long
+Recipes
+    ID
+        int
+    User_id
+        Int, will ref users(user_id)
+    Instructions
+        Text, because recipe instructions can get real long.
+    private/public
+        Boolean,there are only two options, true will be public false will be private
+Ingredients 
+    ingredient_id
+        Int, primary key serial
+    Recipe_id
+        Int, if there is a recipe the ingredient is tied to it will be referred here recipe(recipe_id)
+    Ingredient
+        varchar(20), will be the display name for the ingredient
+Grocery list
+    Ingredient id: INT track ingredient
+    User id INT: track which user the list is for
+    Recipe ID INT: track which recipes can be added to the list
+    Item: VARCHAR: can add unique items
+    Quantity: INT can add number of ingredients
+Occasions table
+    Occasion ID: INT track which occasion!
+    User_id INT: which users are associated with certain occasions!
+    Occasion name: VARCHAR: name of associate occasion!
+Associated recipes to occasions
+    Recipe IDs 
+        Int, will ref recipes table, recipes(recipe_id)
+    Occasion ID
+        Int, will ref the occasions table, occasion(occasion_id)
+
+Table Ideas:
+    Relationships:
+        One -  one:
+            User - Grocery, each user will have one grocery list. 
+
+        One - many:
+            User - recipes, one user can have many recipes, but each recipe will belong to only one user.
+            Grocery - Recipe, one grocery list can reference many recipes. 
+
+        Many - many:
+            Ingredients - recipes, there are many ingredients to many recipes
+
