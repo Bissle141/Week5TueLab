@@ -50,3 +50,5 @@ CREATE TABLE GroceryList (
 	FOREIGN KEY (recipe_id) REFERENCES Recipes(recipes_id),
 	FOREIGN KEY (ingredient_id) REFERENCES Ingredients(ingredient_id)
 );
+
+
